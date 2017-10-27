@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      div {
+        width: 100%;
+        height: 100vh;
+        background: rgb(255, 255, 255);
+      }
+
+    </style>
+  </head>
+
+  <body>
+    <div></div>
+    <script type="text/javascript">
+      function randomNum() {
+        return Math.floor(Math.random() * (255 - 1)) + 1;
+      }
+      //console.log(randomNum());
+      var zCor = randomNum();
+      var div = document.querySelector("div");
+      div.style = "background: rgb (" + randomNum() + ","
+      randomNum() + "," + zCor + ")";
+      window.addEventListener('mousemove', function() {
+        var x = event.pageX;
+        var y = event.pageY;
+        var numX = x / window.innerWidth * 256;
+        var numY = y / window.innerHeight * 256;
+        div.style = "background: rgb(" + numX.toFixed() + "," + numY.toFixed() + "," + zCor + ")";
+      })
+
+    </script>
+  </body>
+
+</html>
